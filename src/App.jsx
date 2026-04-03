@@ -6,6 +6,7 @@ import { Play, Volume2, VolumeX, Cake, Heart, Sparkles, ChevronRight, ChevronLef
 const IMAGES = [
   '/photo1.png',
   '/photo2.png',
+  '/photo3.png',
 ];
 
 export default function App() {
@@ -88,8 +89,8 @@ export default function App() {
         ref={audioRef} 
         loop 
         src={wishMade 
-          ? "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=upbeat-party-10900.mp3" 
-          : "https://cdn.pixabay.com/download/audio/2022/03/10/audio_b28800ba8f.mp3?filename=happy-birthday-music-box-104961.mp3"
+          ? "/song2.mp4" 
+          : "/song1.mp4"
         } 
       />
 
@@ -168,7 +169,7 @@ export default function App() {
                     </span>
                   </h2>
                   <p className="mt-4 text-gray-300 text-lg leading-relaxed max-w-sm">
-                    Wishing you an unforgettable day filled with love, laughter, and everything your heart desires.
+                    Wishing you an unforgettable day filled with love, laughter, and everything your heart desires.MAA cake ta courier koro😋.
                   </p>
                 </motion.div>
 
