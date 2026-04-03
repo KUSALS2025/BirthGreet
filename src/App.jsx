@@ -134,35 +134,35 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            className="absolute inset-0 flex flex-col items-center justify-between py-10 px-4 md:px-20 h-screen overflow-y-auto"
+            className="absolute inset-0 overflow-y-auto bg-black"
             style={{
-              background: 'radial-gradient(circle at top right, rgba(82, 0, 255, 0.1), transparent), radial-gradient(circle at bottom left, rgba(255, 183, 3, 0.1), transparent)',
+              background: 'radial-gradient(circle at top right, rgba(82, 0, 255, 0.1), 0%, transparent 50%), radial-gradient(circle at bottom left, rgba(255, 183, 3, 0.1), 0%, transparent 50%)',
             }}
           >
             {/* Nav / Controls */}
-            <div className="w-full flex justify-between items-center px-6 py-4 absolute top-0 left-0 z-40">
-              <div className="flex gap-2 items-center">
+            <div className="w-full flex justify-between items-center px-6 py-4 fixed top-0 left-0 z-50">
+              <div className="flex gap-2 items-center mix-blend-difference">
                 <Sparkles className="text-amber-400" />
                 <span className="font-semibold tracking-wider text-sm uppercase">Happy Birthday</span>
               </div>
               <button 
                 onClick={toggleMute}
-                className="p-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/20 transition-all"
+                className="p-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/20 transition-all z-50"
               >
                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
               </button>
             </div>
 
-            <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center justify-center h-full gap-12 pt-16">
+            <div className="max-w-5xl w-full mx-auto flex flex-col md:flex-row items-center justify-center min-h-screen gap-12 pt-28 pb-20 px-4 md:px-20">
               
               {/* Left Column: Interactive Cake & Message */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8 z-10">
+              <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-8 z-10 shrink-0">
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.5, duration: 1 }}
                 >
-                  <h2 className="text-4xl md:text-6xl font-black playfair leading-tight">
+                  <h2 className="text-4xl md:text-6xl font-black playfair leading-[1.2]">
                     Cheers to <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-200">
                       Another Year!
