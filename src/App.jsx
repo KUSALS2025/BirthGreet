@@ -15,13 +15,13 @@ export default function App() {
   const [wishMade, setWishMade] = useState(false);
   const audioRef = useRef(null);
 
-  // Auto-play music when started
+  // Auto-play music when started or when the wish state changes
   useEffect(() => {
     if (hasStarted && audioRef.current) {
       audioRef.current.volume = 0.5;
       audioRef.current.play().catch(e => console.log('Audio play failed', e));
     }
-  }, [hasStarted]);
+  }, [hasStarted, wishMade]);
 
   const toggleMute = () => {
     if (audioRef.current) {
@@ -87,7 +87,10 @@ export default function App() {
       <audio 
         ref={audioRef} 
         loop 
-        src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_b28800ba8f.mp3?filename=happy-birthday-music-box-104961.mp3" 
+        src={wishMade 
+          ? "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=upbeat-party-10900.mp3" 
+          : "https://cdn.pixabay.com/download/audio/2022/03/10/audio_b28800ba8f.mp3?filename=happy-birthday-music-box-104961.mp3"
+        } 
       />
 
       <AnimatePresence mode="wait">
